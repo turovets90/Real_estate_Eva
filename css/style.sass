@@ -1,0 +1,1235 @@
+@import "fancybox"
+@import "slick-less"
+
+
+=b_a()
+  content: ''
+  position: absolute
+
+=m_a()
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  margin: auto
+
+
+=flex()
+  display: flex
+  display: -webkit-flex
+
+=j-center()
+  justify-content: center
+  -webkit-justify-content: center
+
+=j-beetween()
+  justify-content: space-between
+  -webkit-justify-content: space-between
+
+=j-space-around()
+  justify-content: space-around
+  -webkit-justify-content: space-around
+
+=j-end()
+  justify-content: flex-end
+  -webkit-justify-content: flex-end
+
+=j-start()
+  justify-content: flex-start
+  -webkit-justify-content: flex-start
+
+=ai-center()
+  align-items: center
+  -webkit-align-items: center
+
+=ai-start()
+  align-items: flex-start
+  -webkit-align-items: flex-start
+
+=ai-end()
+  align-items: flex-end
+  -webkit-align-items: flex-end
+
+=as-center()
+  align-self: center
+  -webkit-align-self: center
+
+=as-end()
+  align-self: flex-end
+  -webkit-align-self: flex-end
+
+=as-start()
+  align-self: flex-start
+  -webkit-align-self: flex-start
+
+=wrap()
+  flex-wrap: wrap
+  -webkit-flex-wrap: wrap
+
+=col()
+  flex-direction: column
+  -webkit-flex-direction: column
+
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  border-radius: $radius
+
+
+=box-shadow($box-shadow)
+  -webkit-box-shadow: $box-shadow
+  -moz-box-shadow: $box-shadow
+  box-shadow: $box-shadow
+
+
+=transform($transform)
+  transform: $transform
+  -webkit-transform: $transform
+  -moz-transform: $transform
+  -ms-transform: $transform
+  -o-transform: $transform
+
+
+=transition($transition_default)
+  transition: $transition_default
+  -webkit-transition: $transition_default
+  -moz-transition: $transition_default
+  -o-transition: $transition_default
+
+
+$transition_default: .3s linear
+
+@font-face
+  font-family: 'Cormorant Garamond Bold'
+  src: url('../fonts/CormorantGaramond-Bold.eot')
+  src: local('Cormorant Garamond Bold'), local('CormorantGaramond-Bold'), url('../fonts/CormorantGaramond-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/CormorantGaramond-Bold.woff') format('woff'), url('../fonts/CormorantGaramond-Bold.ttf') format('truetype')
+  font-weight: bold
+  font-style: normal
+
+$f700: 'Cormorant Garamond Bold'
+
+
+@font-face
+  font-family: 'Cormorant Garamond SemiBold'
+  src: url('../fonts/CormorantGaramond-SemiBold.eot')
+  src: local('Cormorant Garamond SemiBold'), local('CormorantGaramond-SemiBold'), url('../fonts/CormorantGaramond-SemiBold.eot?#iefix') format('embedded-opentype'), url('../fonts/CormorantGaramond-SemiBold.woff') format('woff'), url('../fonts/CormorantGaramond-SemiBold.ttf') format('truetype')
+  font-weight: 600
+  font-style: normal
+$f600: 'Cormorant Garamond SemiBold'
+
+@font-face
+  font-family: 'Cormorant Garamond Medium'
+  src: url('../fonts/CormorantGaramond-Medium.eot')
+  src: local('Cormorant Garamond Medium'), local('CormorantGaramond-Medium'), url('../fonts/CormorantGaramond-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/CormorantGaramond-Medium.woff') format('woff'), url('../fonts/CormorantGaramond-Medium.ttf') format('truetype')
+  font-weight: 500
+  font-style: normal
+$f500: 'Cormorant Garamond Medium'
+
+@font-face
+  font-family: 'Cormorant Garamond Light'
+  src: url('../fonts/CormorantGaramond-Light.eot')
+  src: local('Cormorant Garamond Light'), local('CormorantGaramond-Light'), url('../fonts/CormorantGaramond-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/CormorantGaramond-Light.woff') format('woff'), url('../fonts/CormorantGaramond-Light.ttf') format('truetype')
+  font-weight: 300
+  font-style: normal
+$f400: 'Cormorant Garamond Light'
+
+@font-face
+  font-family: 'Cormorant Garamond Regular'
+  src: url('../fonts/CormorantGaramond-Regular.eot')
+  src: local('Cormorant Garamond Regular'), local('CormorantGaramond-Regular'), url('../fonts/CormorantGaramond-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/CormorantGaramond-Regular.woff') format('woff'), url('../fonts/CormorantGaramond-Regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+$f400: 'Cormorant Garamond Regular'
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap')
+
+$font: 'Cormorant Garamond', serif
+$nunito: 'Nunito', sans-serif
+
+$gold: #EDCA4A
+$black: #232323
+$gold_shadow: 7px 7px 10px rgba(211, 180, 67, 0.7)
+$black_shadow: 7px 7px 8px rgba(0, 0, 0, 0.2)
+$grey_dark: #666666
+
+a
+  color: $gold
+  text-decoration: underline
+  &:hover, &:focus
+    color: $black
+    text-decoration: none
+
+
+button, input, .form-control
+  outline: none
+
+.form-control
+  &:hover, &:focus
+    box-shadow: none
+    outline: none
+
+
+button
+  cursor: pointer
+  &:hover, &:focus
+    +box-shadow(none)
+    outline: none
+
+img, video
+  max-width: 100%
+*
+  outline: none
+*, *::before, *::after
+  box-sizing: border-box
+ul
+  padding: 0
+  margin: 0
+  li
+    list-style: none
+
+body
+  background: #fff
+  color: $black
+  font-size: 16px
+  line-height: 22px
+  font-family: $f400
+  padding: 0
+  margin: 0
+
+.container
+  width: 100%
+  max-width: 1200px
+  margin: auto
+  padding-left: 10px
+  padding-right: 10px
+  position: relative
+  @media (max-width: 767px)
+    padding-left: 15px
+    padding-right: 15px
+
+
+.row
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  margin-right: -10px
+  margin-left: -10px
+  @media (max-width: 767px)
+    margin-right: -15px
+    margin-left: -15px
+
+
+.col
+  padding-left: 10px
+  padding-right: 10px
+  @media (max-width: 767px)
+    padding-left: 15px
+    padding-right: 15px
+
+
+h1, .h1, h2, .h2,h3, .h3, h4, .h4,h5, .h5 .title
+  color: $black
+  font-family: $f700
+
+h2, .h2
+  font-size: 50px
+  line-height: 43px
+  margin-bottom: 40px
+  @media (max-width: 1200px)
+    font-size: 40px
+    line-height: 1.2
+    margin-bottom: 30px
+  @media (max-width: 991px)
+    font-size: 30px
+
+  @media (max-width: 575px)
+
+    margin-bottom: 25px
+
+header
+  padding: 7px 0
+  border-bottom: 2px solid $gold
+.h_row
+  +flex
+  +wrap
+  +ai-center
+  +j-beetween
+  .logo
+    @media (max-width: 1024px)
+      width: 35%
+    @media (max-width: 375px)
+      width: 30%
+  .d_flex
+    @media (max-width: 1024px)
+      width: 65%
+    @media (max-width: 375px)
+      width: 70%
+  .d_flex
+    +flex
+    +ai-center
+    +j-end
+.main_menu
+  @media (max-width: 1024px)
+    position: fixed
+    top: 0
+    right: 0
+    width: 80%
+    height: 100%
+    background: $gold
+    +transition($transition_default)
+    padding-bottom: 30px
+    overflow: auto
+    +transform(translateX(100%))
+    opacity: 0
+    z-index: 999
+    &.open
+      +transform(translateX(0))
+      opacity: 1
+
+
+  .mm_close
+    width: 30px
+    height: 30px
+    position: relative
+    margin-bottom: 30px
+    background: #fff
+    &:before, &:after
+      +b_a
+      +m_a
+      width: 25px
+      height: 2px
+      background: $black
+    &:before
+      +transform(rotate(45deg))
+    &:after
+      +transform(rotate(-45deg))
+    @media (min-width: 1025px)
+      display: none
+  .nav
+    +flex
+    +ai-center
+    +wrap
+
+    .arrow
+      position: absolute
+      right: 10px
+      top: 5px
+      width: 30px
+      height: 30px
+      cursor: pointer
+      &.act
+        &:before
+          opacity: 0
+      &:before, &:after
+        +b_a
+        +m_a
+        width: 25px
+        height: 2px
+        +border-radius(2px)
+        background: $black
+      &:before
+        +transform(rotate(90deg))
+      @media (min-width: 1025px)
+        display: none
+
+    > li
+      position: relative
+      padding: 25px 19px
+      @media (max-width: 1200px)
+        padding: 10px
+      @media (max-width: 1024px)
+        width: 100%
+
+      @media (min-width: 992px)
+        &:hover
+          > a
+            &:after
+              +transform(rotate(-180deg))
+          .sub_menu
+            +flex
+      +  li
+        &:before
+          +b_a
+          left: 0
+          top: 0
+          bottom: 0
+          margin: auto
+          height: 12px
+          width: 1px
+          background: $gold
+      &.active
+       > a
+          color: $gold
+          @media (max-width: 1024px)
+           color: #fff
+      &.has_child
+       > a
+          padding-right: 17px
+          &:after
+            +b_a
+            right: 0
+            bottom: 5px
+            width: 9px
+            height: 6px
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='9' height='6' viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.25 1.26251L7.36875 0.381256L4.5 3.24376L1.63125 0.381256L0.75 1.26251L4.5 5.01251L8.25 1.26251Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
+            @media (max-width: 1024px)
+              display: none
+      a
+        display: inline-block
+        position: relative
+        color: $black
+        font: 17px $f500
+        text-decoration: none
+        letter-spacing: 0.02em
+        @media (max-width: 1200px)
+          font-size: 16px
+        @media (max-width: 1024px)
+          font: 20px $f700
+
+
+        &:hover
+          text-decoration: none
+          color: $gold
+      .sub_menu
+        display: none
+        @media (min-width: 1025px)
+          position: absolute
+          top: 100%
+          left: 0
+          background: $gold
+          width: 100%
+          min-width: 695px
+          z-index: 10
+
+          &:before
+            +b_a
+            left: 30px
+            top: -11px
+            width: 23px
+            height: 11px
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M3.28571 0L0 11H23L3.28571 0Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
+
+        li
+          width: 100%
+          //margin-bottom: 10px
+          @media (min-width: 1025px)
+            width: 33.33%
+            + li
+              border-left: 1px solid #232323
+
+          a
+            +flex
+            +ai-center
+            color: $black
+            font-size: 20px
+            font-family: $f700
+            line-height: 17px
+            padding: 23px 30px
+            @media (max-width: 1200px)
+              padding: 15px
+
+            img, svg
+              margin-right: 18px
+            svg
+              @media (max-width: 1024px)
+
+            span
+              color: $black
+              font-size: 20px
+              font-family: $f700
+              line-height: 17px
+
+
+.d_flex
+  +flex
+.j_end
+  +j-end
+  +flex
+.mm_btn
+  width: 30px
+  height: 20px
+  margin-left: 20px
+
+  +flex
+  @media (max-width: 575px)
+    margin-left: 10px
+  .hamburger
+    width: 30px
+    height: 20px
+    position: relative
+    background: none
+    padding: 0
+    border: 0
+    span
+      position: absolute
+      left: 0
+      width: 100%
+      height: 2px
+      +border-radius(2px)
+      background: $black
+      &:nth-child(1)
+        top: 0
+      &:nth-child(2)
+        top: 0
+        bottom: 0
+        margin: auto
+      &:nth-child(3)
+        bottom: 0
+  @media (min-width: 1025px)
+    display: none
+
+.phone
+  +flex
+  +ai-center
+  &:hover, &:focus
+    a
+      color: $gold
+    svg
+      *
+        fill: $gold
+  .icon
+    margin-right: 8px
+    @media (max-width: 575px)
+      margin-right: 3px
+  a
+    text-decoration: none
+    color: $black
+    font: 20px $f500
+    letter-spacing: 0.05em
+    padding-bottom: 5px
+    @media (max-width: 575px)
+      font: 15px $f700
+
+
+
+section
+  padding: 100px 0
+  position: relative
+  @media (max-width: 1200px)
+    padding: 70px 0
+  @media (max-width: 767px)
+    padding: 50px 0
+  &.pb_70
+    padding-bottom: 70px
+    @media (max-width: 1200px)
+      padding-bottom: 40px
+    @media (max-width: 767px)
+      padding-bottom: 20px
+
+
+.main_slider_item
+  background-size: cover
+  background-position: center
+  position: relative
+  padding-right: 60px
+  padding-left: 60px
+  @media (max-width: 767px)
+    padding-right: 50px
+    padding-left: 45px
+  &:before
+    +b_a
+    width: 100%
+    height: 100%
+    background: linear-gradient(268.28deg, #232323 10.46%, rgba(35, 35, 35, 0) 73.03%)
+    opacity: 0.2
+    left: 0
+    top: 0
+
+  .container
+    position: relative
+  .right
+    text-align: right
+.main_slider_content
+  display: inline-block
+  text-align: left
+  position: relative
+  background: $black
+  max-width: 400px
+  color: #fff
+  font: 20px/25px $f700
+  padding: 50px 70px
+
+  @media (max-width: 1200px)
+    font-size: 18px
+    line-height: 1.2
+    padding: 30px 40px
+  @media (max-width: 767px)
+    font-size: 16px
+    padding: 30px
+
+  +box-shadow(10px 10px 20px rgba(0, 0, 0, 0.6))
+  .title
+    color: $gold
+    font: 50px/43px $f700
+    @media (max-width: 1200px)
+      font-size: 40px
+      line-height: 1.2
+    @media (max-width: 991px)
+      font-size: 30px
+    @media (max-width: 767px)
+      font-size: 26px
+    @media (max-width: 575px)
+      font-size: 24px
+
+  p
+    margin-bottom: 30px
+
+
+.read_more, .btn_submit
+  +flex
+  +ai-center
+  +j-center
+  text-decoration: none
+  color: $gold
+  font-size: 20px
+  background: $black
+  border: 2px solid $gold
+  width: 100%
+  max-width: 175px
+  height: 53px
+  position: relative
+  font-family: $f700
+  @media (max-width: 767px)
+    height: 45px
+  &:before
+    +b_a
+    width: 100%
+    height: 100%
+    right: -7px
+    bottom: -7px
+    border-right: 5px solid $gold
+    border-bottom: 5px solid $gold
+    @media (max-width: 767px)
+      right: -5px
+      bottom: -5px
+
+  span
+    position: relative
+    +flex
+    padding-right: 30px
+    &:before
+      +b_a
+      right: 0
+      top: 0
+      bottom: 0
+      margin: auto
+      width: 20px
+      height: 14px
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='14' viewBox='0 0 20 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.375 7C0.375 6.81766 0.447433 6.64279 0.576364 6.51386C0.705295 6.38493 0.880163 6.3125 1.0625 6.3125L17.2779 6.3125L12.9508 1.98675C12.8217 1.85766 12.7491 1.68257 12.7491 1.5C12.7491 1.31743 12.8217 1.14234 12.9508 1.01325C13.0798 0.884155 13.2549 0.811632 13.4375 0.811632C13.6201 0.811632 13.7952 0.884155 13.9243 1.01325L19.4243 6.51325C19.4883 6.57711 19.5391 6.65298 19.5737 6.7365C19.6084 6.82003 19.6262 6.90957 19.6262 7C19.6262 7.09043 19.6084 7.17997 19.5737 7.26349C19.5391 7.34702 19.4883 7.42289 19.4243 7.48675L13.9243 12.9867C13.7952 13.1158 13.6201 13.1884 13.4375 13.1884C13.2549 13.1884 13.0798 13.1158 12.9508 12.9867C12.8217 12.8577 12.7491 12.6826 12.7491 12.5C12.7491 12.3174 12.8217 12.1423 12.9508 12.0132L17.2779 7.6875L1.0625 7.6875C0.880163 7.6875 0.705295 7.61507 0.576364 7.48613C0.447433 7.3572 0.375 7.18234 0.375 7Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
+
+  &:hover, &:focus
+    color: $gold
+    text-decoration: none
+
+
+.has_border_right
+  position: relative
+  +flex
+  +wrap
+  &:before
+    +b_a
+    width: 100%
+    height: 100%
+    border: 3px solid $gold
+    right: -10px
+    bottom: -10px
+    pointer-events: none
+    @media (max-width: 767px)
+      right: -7px
+      bottom: -7px
+
+
+
+.slick-arrow
+  width: 51px
+  height: 51px
+  background: $black
+  +box-shadow($black_shadow)
+  z-index: 2
+  opacity: 1
+  @media (max-width: 767px)
+    width: 45px
+    height: 45px
+  &:hover, &:focus
+    background: $gold
+    +box-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))
+  &:before
+    +b_a
+    +m_a
+    width: 24px
+    height: 16px
+
+.slick-prev
+  left: 0
+  &:hover, &:focus
+    &:before
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='16' viewBox='0 0 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.375 8C23.375 8.21549 23.2894 8.42215 23.137 8.57453C22.9847 8.7269 22.778 8.8125 22.5625 8.8125L3.39887 8.8125L8.51275 13.9248C8.66532 14.0773 8.75103 14.2842 8.75103 14.5C8.75103 14.7158 8.66532 14.9227 8.51275 15.0753C8.36018 15.2278 8.15326 15.3135 7.9375 15.3135C7.72174 15.3135 7.51482 15.2278 7.36225 15.0753L0.862249 8.57526C0.786582 8.49978 0.72655 8.41012 0.68559 8.31141C0.64463 8.2127 0.623546 8.10688 0.623546 8C0.623546 7.89313 0.644629 7.78731 0.68559 7.6886C0.72655 7.58989 0.786582 7.50023 0.862248 7.42475L7.36225 0.924756C7.51481 0.77219 7.72174 0.68648 7.9375 0.68648C8.15326 0.68648 8.36018 0.77219 8.51275 0.924756C8.66531 1.07732 8.75102 1.28425 8.75102 1.50001C8.75102 1.71577 8.66531 1.92269 8.51275 2.07526L3.39887 7.1875L22.5625 7.1875C22.778 7.1875 22.9847 7.27311 23.137 7.42548C23.2894 7.57785 23.375 7.78451 23.375 8Z' fill='%23232323'/%3e%3c/svg%3e ")
+
+  &:before
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='16' viewBox='0 0 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.375 8C23.375 8.21549 23.2894 8.42215 23.137 8.57453C22.9847 8.7269 22.778 8.8125 22.5625 8.8125L3.39887 8.8125L8.51275 13.9248C8.66532 14.0773 8.75103 14.2842 8.75103 14.5C8.75103 14.7158 8.66532 14.9227 8.51275 15.0753C8.36018 15.2278 8.15326 15.3135 7.9375 15.3135C7.72174 15.3135 7.51482 15.2278 7.36225 15.0753L0.862249 8.57526C0.786582 8.49978 0.72655 8.41012 0.68559 8.31141C0.64463 8.2127 0.623546 8.10688 0.623546 8C0.623546 7.89313 0.644629 7.78731 0.68559 7.6886C0.72655 7.58989 0.786582 7.50023 0.862248 7.42475L7.36225 0.924756C7.51481 0.77219 7.72174 0.68648 7.9375 0.68648C8.15326 0.68648 8.36018 0.77219 8.51275 0.924756C8.66531 1.07732 8.75102 1.28425 8.75102 1.50001C8.75102 1.71577 8.66531 1.92269 8.51275 2.07526L3.39887 7.1875L22.5625 7.1875C22.778 7.1875 22.9847 7.27311 23.137 7.42548C23.2894 7.57785 23.375 7.78451 23.375 8Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
+.slick-next
+  right: 0
+  &:hover, &:focus
+    &:before
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='16' viewBox='0 0 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.625 8C0.625 7.78451 0.710602 7.57785 0.862975 7.42547C1.01535 7.2731 1.22201 7.1875 1.4375 7.1875L20.6011 7.1875L15.4873 2.07525C15.3347 1.92268 15.249 1.71576 15.249 1.5C15.249 1.28424 15.3347 1.07731 15.4873 0.924749C15.6398 0.772183 15.8467 0.686473 16.0625 0.686473C16.2783 0.686473 16.4852 0.772183 16.6378 0.924749L23.1378 7.42475C23.2134 7.50022 23.2735 7.58988 23.3144 7.68859C23.3554 7.7873 23.3765 7.89313 23.3765 8C23.3765 8.10687 23.3554 8.21269 23.3144 8.3114C23.2735 8.41011 23.2134 8.49977 23.1378 8.57525L16.6378 15.0752C16.4852 15.2278 16.2783 15.3135 16.0625 15.3135C15.8467 15.3135 15.6398 15.2278 15.4873 15.0752C15.3347 14.9227 15.249 14.7158 15.249 14.5C15.249 14.2842 15.3347 14.0773 15.4873 13.9247L20.6011 8.8125L1.4375 8.8125C1.22201 8.8125 1.01535 8.72689 0.862975 8.57452C0.710602 8.42215 0.625 8.21549 0.625 8Z' fill='%23232323'/%3e%3c/svg%3e ")
+
+  &:before
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='16' viewBox='0 0 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.625 8C0.625 7.78451 0.710602 7.57785 0.862975 7.42547C1.01535 7.2731 1.22201 7.1875 1.4375 7.1875L20.6011 7.1875L15.4873 2.07525C15.3347 1.92268 15.249 1.71576 15.249 1.5C15.249 1.28424 15.3347 1.07731 15.4873 0.924749C15.6398 0.772183 15.8467 0.686473 16.0625 0.686473C16.2783 0.686473 16.4852 0.772183 16.6378 0.924749L23.1378 7.42475C23.2134 7.50022 23.2735 7.58988 23.3144 7.68859C23.3554 7.7873 23.3765 7.89313 23.3765 8C23.3765 8.10687 23.3554 8.21269 23.3144 8.3114C23.2735 8.41011 23.2134 8.49977 23.1378 8.57525L16.6378 15.0752C16.4852 15.2278 16.2783 15.3135 16.0625 15.3135C15.8467 15.3135 15.6398 15.2278 15.4873 15.0752C15.3347 14.9227 15.249 14.7158 15.249 14.5C15.249 14.2842 15.3347 14.0773 15.4873 13.9247L20.6011 8.8125L1.4375 8.8125C1.22201 8.8125 1.01535 8.72689 0.862975 8.57452C0.710602 8.42215 0.625 8.21549 0.625 8Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
+
+
+.slick-dots
+  bottom: 28px
+  @media (max-width: 1200px)
+    bottom: 20px
+  @media (max-width: 767px)
+    bottom: 10px
+  li
+    width: 13px
+    height: 13px
+    margin: 0 6px
+    &.slick-active
+      button
+        background: $gold
+    button
+      width: 13px
+      height: 13px
+      background: $black
+      &:before
+        display: none
+
+
+.four_goldbox-text_row
+  .col
+    width: 50%
+    @media (max-width: 991px)
+      width: 100%
+      &:first-child
+        margin-bottom: 30px
+
+.gold_box_row
+  .col
+    margin-bottom: 20px
+    width: 50%
+    display: inline-block
+    @media (max-width: 575px)
+      width: 100%
+
+
+.gold_box_item
+  background: $gold
+  +box-shadow($gold_shadow)
+  position: relative
+  width: 100%
+  height: 277px
+  padding: 33px
+  @media (max-width: 1200px)
+    padding: 25px
+  @media (max-width: 767px)
+    padding: 20px
+
+  &.has_border_right
+    &:hover
+      &:before
+        opacity: 1
+    &:before
+      border: 3px solid $black
+      opacity: 0
+      +transition($transition_default)
+  &.ai_end
+    +flex
+    +ai-end
+    img
+      margin-bottom: 20px
+  .g_title
+    color: $black
+    font: 30px/26px $f700
+    margin-bottom: 10px
+  .g_desc
+    font: 20px/21px $f700
+
+
+.ai_center
+  +ai-center
+  +flex
+
+.j_center
+  +j-center
+  +flex
+
+
+.g_title
+  letter-spacing: 0.04em
+  text-transform: uppercase
+  font: 16px/14px $f700
+  color: $gold
+  margin-bottom: 35px
+  @media (max-width: 1200px)
+    margin-bottom: 25px
+  @media (max-width: 767px)
+    margin-bottom: 15px
+.text_col
+  max-width: 380px
+  &.form_col
+    max-width: 475px
+  &.pt
+    @media (min-width: 1201px)
+      padding-top: 143px
+
+
+
+  .h2
+    margin-bottom: 55px
+    @media (max-width: 1200px)
+      margin-bottom: 45px
+    @media (max-width: 767px)
+      margin-bottom: 30px
+    @media (max-width: 575px)
+      margin-bottom: 25px
+  .desc
+    font: 24px/29px $f400
+    @media (max-width: 1200px)
+      font-size: 22px
+      line-height: 1.2
+    @media (max-width: 991px)
+      font-size: 20px
+    @media (max-width: 767px)
+      font-size: 18px
+
+
+
+.cards_grid
+  .col
+    width: 33.33%
+    margin-bottom: 40px
+    @media (max-width: 1200px)
+      margin-bottom: 30px
+    @media (max-width: 991px)
+      width: 50%
+    @media (max-width: 757px)
+      width: 100%
+      margin-bottom: 20px
+
+.card_grid_item
+  width: 100%
+  background: #F9F9FB
+  +box-shadow(7px 7px 8px rgba(0, 0, 0, 0.2))
+  .card_item_img
+    width: 100%
+    height: 275px
+    background-size: cover
+    background-position: center
+    position: relative
+    .label
+      position: absolute
+      top: 20px
+      left: 0
+      color: $black
+      letter-spacing: 0.02em
+      text-transform: uppercase
+      font: 13px $f700
+      background: $gold
+      padding: 8px 17px
+  .card_item_body
+    padding: 30px
+    @media (max-width: 1200px)
+      padding: 20px
+    @media (max-width: 575px)
+      padding: 15px
+    .card_item_title
+      font: 32px/28px $f700
+      margin-bottom: 10px
+      @media (max-width: 1200px)
+        font-size: 26px
+      @media (max-width: 767px)
+        font-size: 24px
+      @media (max-width: 575px)
+        font-size: 22px
+    .card_item_subtitle
+      color: $grey_dark
+      font: 20px/21px $f700
+      margin-bottom: 15px
+      @media (max-width: 1200px)
+        font-size: 18px
+      @media (max-width: 767px)
+        font-size: 16px
+
+    .b_row
+      +flex
+      +ai-center
+      +j-beetween
+      .price
+        font: 22px $f700
+        @media (max-width: 1200px)
+          font-size: 20px
+        @media (max-width: 767px)
+          font-size: 18px
+
+
+.btn_default
+  width: 100%
+  max-width: 150px
+  height: 45px
+  +flex
+  +ai-center
+  +j-center
+  background: $gold
+  +box-shadow(2px 2px 6px rgba(237, 202, 74, 0.6))
+  color: $black
+  text-decoration: none
+  font-size: 18px
+  font-family: $f700
+  &:hover
+    text-decoration: none
+    background: #fff
+    +box-shadow(2px 2px 6px rgba(0, 0, 0, 0.1))
+  &.white
+    background: #fff
+    +box-shadow(2px 2px 6px rgba(0, 0, 0, 0.1))
+    &:hover
+      background: $gold
+      +box-shadow(2px 2px 6px rgba(237, 202, 74, 0.6))
+
+
+.text_center
+  text-align: center
+.bg_bottom
+  position: absolute
+  width: 100%
+  height: calc(100% - 286px)
+  left: 0
+  bottom: 0
+  background-position: center
+  background-size: cover
+  &:before
+    +b_a
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+    background: rgba(35, 35, 35, 0.95)
+
+.img_box
+
+  &.has_gold_shadow
+    padding-top: 60px
+    position: relative
+    display: inline-block
+    @media (max-width: 1200px)
+      padding-top: 0
+
+    &:before
+      +b_a
+      width: 58%
+      height: 80%
+      background: $gold
+      top: 0
+      left: - 60px
+      @media (max-width: 1200px)
+        display: none
+  &.has_white_shadow
+    padding-top: 60px
+    position: relative
+    display: inline-block
+    @media (max-width: 1200px)
+      padding-top: 0
+
+    &:before
+      +b_a
+      width: 58%
+      height: 80%
+      background: #fff
+      top: 0
+      left: - 60px
+      @media (max-width: 1200px)
+        display: none
+.w_100
+  width: 100%
+.cards_list
+  .col
+    margin-bottom: 40px
+    width: 100%
+.card_list_item
+  +flex
+  +wrap
+  background:  #F9F9FB
+  +box-shadow(7px 7px 8px rgba(0, 0, 0, 0.15))
+  .card_item_img
+    width: 34%
+    height: 292px
+    background-size: cover
+    background-position: center
+    @media (max-width: 991px)
+      width: 100%
+
+  .card_item_body
+    width: 66%
+    padding: 30px 40px 30px 77px
+    +flex
+    +ai-center
+
+    @media (max-width: 991px)
+      width: 100%
+      padding: 30px
+    @media (max-width: 767px)
+      padding: 20px
+    .card_item_title
+      font: 32px/32px $f700
+      margin-bottom: 15px
+      @media (max-width: 1200px)
+        font-size: 28px
+    .card_item_desc
+      color: $grey_dark
+      font: 15px/19px $nunito
+      margin-bottom: 20px
+      max-width: 590px
+
+
+.pb_0
+  padding-bottom: 0
+
+
+.gallery_row
+  +flex
+  +wrap
+  margin: 0 -23px
+  padding-top: 50px
+  @media (max-width: 1200px)
+    margin: 0 -15px
+
+  .gallery_item
+    width: 20%
+    padding: 0 23px
+    margin-bottom: 46px
+    @media (max-width: 1200px)
+      width: 25%
+      padding: 0 15px
+    @media (max-width: 991px)
+      width: 33.33%
+    @media (max-width: 575px)
+      width: 50%
+    &.last
+      width: 40%
+      @media (max-width: 1200px)
+        width: 50%
+      @media (max-width: 991px)
+        width: 100%
+      .title
+        color: #F9F9FB
+        font-size: 32px
+        line-height: 31px
+        font-family: $f700
+        margin-bottom: 20px
+        @media (max-width: 1200px)
+          font-size: 30px
+        @media (max-width: 991px)
+          font-size: 28px
+        @media (max-width: 767px)
+          font-size: 24px
+      .read_more
+        max-width: 100%
+    .has_border_right
+      &:before
+        border: 2px solid #edca4a
+        bottom: -8px
+        right: -8px
+
+
+.partners_list
+  &.slick-slider
+    padding: 0 80px
+    @media (max-width: 1200px)
+      padding: 0 60px
+  .col
+    width: 16.66%
+    @media (max-width: 1200px)
+      width: 25%
+    @media (max-width: 991px)
+      width: 20%
+    @media (max-width: 767px)
+      width: 33.33%
+    @media (max-width: 575px)
+      width: 50%
+.partners
+  text-align: center
+
+
+
+.four_goldbox-text
+  &.bg_grey
+    background: #F9F9FB
+    @media (min-width: 1201px)
+      padding: 110px 0 200px
+
+
+.contact_form
+  .field
+    margin-bottom: 25px
+    input, textarea
+      //border: 1px solid #EDCA4A
+      border: 0
+      +box-shadow(1px 1px 4px rgba(0, 0, 0, 0.05))
+      background: #fff
+      width: 100%
+      height: 45px
+      padding-left: 22px
+      color: $black
+      font-size: 15px
+      &::-webkit-input-placeholder
+        color: rgba(35, 35, 35, 0.4)
+        font-size: 15px
+      &::-moz-placeholder
+        color: rgba(35, 35, 35, 0.4)
+        font-size: 15px
+      &::-ms-input-placeholder
+        color: rgba(35, 35, 35, 0.4)
+        font-size: 15px
+      &:-moz-placeholder
+        color: rgba(35, 35, 35, 0.4)
+        font-size: 15px
+      &:-ms-input-placeholder
+        color: rgba(35, 35, 35, 0.4)
+        font-size: 15px
+
+  .btn_submit
+    max-width: 200px
+
+
+
+footer
+  background: url(../img/footer_bg.png)
+  position: relative
+  background-position: center
+  background-size: cover
+  color: #fff
+  padding: 70px 0
+  @media (max-width: 1200px)
+    padding: 50px 0
+  @media (max-width: 991px)
+    padding: 30px 0
+  &:before
+    +b_a
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+    background: rgba(35,35,35,.95)
+
+  .footer_row
+    .col
+      width: 33.33%
+      @media (max-width: 991px)
+        width: 100%
+        margin-bottom: 20px
+        &:nth-child(3)
+          margin-bottom: 0
+      @media (min-width: 992px)
+        &:nth-child(2)
+          +flex
+          +j-center
+        &:nth-child(3)
+          +flex
+          +j-end
+  .logo
+    margin-bottom: 20px
+  p
+    font-size: 18px
+    line-height: 22px
+    margin-bottom: 30px
+    &.copyright
+      font-size: 13px
+      line-height: 19px
+      a
+        display: block
+        color: #fff
+  .f_title
+    color: $gold
+    font: 22px/26px $f600
+    text-transform: uppercase
+    margin-bottom: 20px
+  a
+    color: #fff
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+      color: $gold
+  .f_menu
+    li
+      margin-bottom: 5px
+      a
+        font: 18px $f500
+        color: #fff
+        text-decoration: none
+        &:hover
+          color: $gold
+          text-decoration: underline
+
+  .f_contacts
+    li
+
+      position: relative
+      padding-left: 27px
+      color: #fff
+      font: 18px $f500
+      margin-bottom: 20px
+      .social_menu
+        +flex
+        +ai-center
+        li
+          margin-right: 10px
+          padding-left: 0
+          a
+            width: 37px
+            height: 37px
+            background: $gold
+            +box-shadow(4px 4px 10px rgba(0, 0, 0, 0.3))
+            +flex
+            +ai-center
+            +j-center
+      a
+        color: #fff
+        font: 18px $f500
+        text-decoration: none
+        &:hover
+          color: $gold
+          text-decoration: underline
+      &.phones
+        ul
+          li
+            padding-left: 0
+            width: 100%
+            margin-bottom: 0
+
+        &:before
+          +b_a
+          left: 0
+          top: 3px
+          width: 16px
+          height: 16px
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M13.3047 0.222319L15.5424 2.47815C15.8839 2.81113 15.9996 3.2525 16.0001 3.68236C15.9432 5.5833 15.0094 7.38013 14.0506 8.85544C12.2889 11.2771 10.1044 13.499 7.46455 14.8935C6.35757 15.4284 4.94516 16.056 3.70957 15.996C3.24477 15.9907 2.7886 15.8654 2.489 15.5381L0.23432 13.2823C-0.16412 12.8138 -0.02636 12.3608 0.437747 12.0611L3.87911 10.2463C4.2868 10.0552 4.72363 10.1648 5.01495 10.4498L5.84561 11.2809C5.91589 11.3322 5.99589 11.3649 6.08296 11.3657C7.31659 11.047 8.45361 10.0815 9.23611 9.22861C10.0186 8.37572 11.0787 7.45894 11.3297 6.26892C11.3707 6.12182 11.3852 5.94165 11.2873 5.83641L10.3041 4.86961C10.0515 4.53633 9.92803 4.05513 10.1346 3.69933L10.1346 3.68237L12.0671 0.408905C12.3684 -0.0716406 12.9505 -0.121749 13.3047 0.222319Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
+
+      &.email
+        &:before
+          +b_a
+          left: 0
+          top: 0
+          bottom: 0
+          margin: auto
+          width: 16px
+          height: 12px
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.00001 6L0.0078125 1.95312V1C0.0078125 0.71875 0.106674 0.481771 0.304398 0.289062C0.502121 0.0963542 0.736268 0 1.00684 0H14.9932C15.2637 0 15.4979 0.0963542 15.6956 0.289062C15.8933 0.481771 15.9922 0.71875 15.9922 1V1.95312L8.00001 6ZM7.50049 7H8.49952L15.9922 3.10938V11C15.9922 11.2708 15.8933 11.5052 15.6956 11.7031C15.4979 11.901 15.2637 12 14.9932 12H1.00684C0.736268 12 0.502121 11.901 0.304398 11.7031C0.106674 11.5052 0.0078125 11.2708 0.0078125 11V3.10938L7.50049 7Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
+      &.location
+        &:before
+          +b_a
+          left: 0
+          top: 0
+          bottom: 0
+          margin: auto
+          width: 15px
+          height: 23px
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='23' viewBox='0 0 15 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.5 0.711914C3.7713 0.711914 0.75 3.72106 0.75 7.44841C0.75 13.8933 7.5 22.2984 7.5 22.2984C7.5 22.2984 14.25 13.892 14.25 7.44841C14.25 3.72241 11.2287 0.711914 7.5 0.711914ZM7.5 11.1758C6.53329 11.1758 5.60617 10.7917 4.9226 10.1082C4.23903 9.4246 3.855 8.49748 3.855 7.53076C3.855 6.56405 4.23903 5.63693 4.9226 4.95336C5.60617 4.26979 6.53329 3.88576 7.5 3.88576C8.46671 3.88576 9.39383 4.26979 10.0774 4.95336C10.761 5.63693 11.145 6.56405 11.145 7.53076C11.145 8.49748 10.761 9.4246 10.0774 10.1082C9.39383 10.7917 8.46671 11.1758 7.5 11.1758Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
+
+
