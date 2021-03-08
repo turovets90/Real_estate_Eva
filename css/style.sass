@@ -641,8 +641,26 @@ section
     @media (max-width: 767px)
       right: -7px
       bottom: -7px
+      border: 2px solid $gold
 
-
+.has_border_left
+  position: relative
+  display: inline-block
+  &:before
+    +b_a
+    width: 100%
+    height: 100%
+    border: 3px solid $gold
+    left: -10px
+    top: -10px
+    pointer-events: none
+    @media (min-width: 1201px)
+      left: -17px
+      top: -17px
+    @media (max-width: 767px)
+      left: -7px
+      top: -7px
+      border: 2px solid $gold
 
 .slick-arrow
   width: 51px
@@ -711,6 +729,9 @@ section
         margin-bottom: 30px
 
 .gold_box_row
+  &.mt_minus
+    @media (min-width: 992px)
+      margin-top: -180px
   .col
     margin-bottom: 20px
     width: 50%
@@ -725,7 +746,7 @@ section
   position: relative
   width: 100%
   height: 277px
-  padding: 33px
+  padding: 30px
   @media (max-width: 1200px)
     padding: 25px
   @media (max-width: 767px)
@@ -748,9 +769,13 @@ section
     color: $black
     font: 30px/26px $f700
     margin-bottom: 10px
+    text-transform: initial
+    @media (max-width: 1200px)
+      font: 26px/1.2 $f700
   .g_desc
     font: 20px/21px $f700
-
+    @media (max-width: 1200px)
+      font: 16px/1.2 $f700
 
 .ai_center
   +ai-center
@@ -759,7 +784,9 @@ section
 .j_center
   +j-center
   +flex
-
+.j_start
+  +flex
+  +j-start
 
 .g_title
   letter-spacing: 0.04em
@@ -772,7 +799,8 @@ section
   @media (max-width: 767px)
     margin-bottom: 15px
 .text_col
-  max-width: 380px
+  @media (min-width: 992px)
+    max-width: 380px
   &.form_col
     max-width: 475px
   &.pt
@@ -1232,4 +1260,269 @@ footer
           height: 23px
           background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='23' viewBox='0 0 15 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.5 0.711914C3.7713 0.711914 0.75 3.72106 0.75 7.44841C0.75 13.8933 7.5 22.2984 7.5 22.2984C7.5 22.2984 14.25 13.892 14.25 7.44841C14.25 3.72241 11.2287 0.711914 7.5 0.711914ZM7.5 11.1758C6.53329 11.1758 5.60617 10.7917 4.9226 10.1082C4.23903 9.4246 3.855 8.49748 3.855 7.53076C3.855 6.56405 4.23903 5.63693 4.9226 4.95336C5.60617 4.26979 6.53329 3.88576 7.5 3.88576C8.46671 3.88576 9.39383 4.26979 10.0774 4.95336C10.761 5.63693 11.145 6.56405 11.145 7.53076C11.145 8.49748 10.761 9.4246 10.0774 10.1082C9.39383 10.7917 8.46671 11.1758 7.5 11.1758Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
 
+
+.page_content
+  position: relative
+  padding: 25px 0
+  @media (max-width: 575px)
+    padding: 10px 0
+  &.has_blackbg
+    .breadcrumb
+      li
+        a
+          color: #fff
+          svg
+            *
+              fill: #fff
+          &:hover
+            text-decoration: underline
+            color: $gold
+
+  .bg_top
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 737px
+    background-size: cover
+    background-position: center
+    &:before
+      +b_a
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+      background: rgba(35, 35, 35, 0.95)
+
+
+.breadcrumb
+  +flex
+  +ai-center
+  +wrap
+  li
+    position: relative
+    padding: 0 15px
+    +flex
+    +ai-center
+    &:first-child
+      padding-left: 0
+    + li
+      &:before
+        +b_a
+        left: -7px
+        top: 0
+        bottom: 0
+        margin: auto
+        width: 14px
+        height: 8px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.875 4C0.875 3.88397 0.921093 3.77269 1.00314 3.69064C1.08519 3.60859 1.19647 3.5625 1.3125 3.5625L11.6314 3.5625L8.87775 0.809749C8.7956 0.727598 8.74945 0.616177 8.74945 0.499999C8.74945 0.38382 8.7956 0.2724 8.87775 0.190249C8.9599 0.108098 9.07132 0.0619465 9.1875 0.0619465C9.30368 0.061946 9.4151 0.108098 9.49725 0.190249L12.9973 3.69025C13.038 3.73089 13.0703 3.77917 13.0924 3.83232C13.1144 3.88547 13.1258 3.94245 13.1258 4C13.1258 4.05754 13.1144 4.11452 13.0924 4.16768C13.0703 4.22083 13.038 4.26911 12.9973 4.30975L9.49725 7.80975C9.4151 7.8919 9.30368 7.93805 9.1875 7.93805C9.07132 7.93805 8.9599 7.8919 8.87775 7.80975C8.7956 7.7276 8.74945 7.61618 8.74945 7.5C8.74945 7.38382 8.7956 7.2724 8.87775 7.19025L11.6314 4.4375L1.3125 4.4375C1.19647 4.4375 1.08519 4.3914 1.00314 4.30936C0.921093 4.22731 0.875 4.11603 0.875 4Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
+
+    a
+      color: $black
+      font-size: 16px
+      +flex
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+        color: $gold
+
+.card_top_row
+  padding-top: 70px
+  @media (max-width: 1200px)
+    padding-top: 50px
+  @media (max-width: 991px)
+    padding-top: 30px
+  > .col
+    &:first-child
+      width: 33%
+      @media (max-width: 991px)
+        width: 100%
+        margin-bottom: 30px
+    &:last-child
+      width: 67%
+      padding-left: 90px
+      @media (max-width: 1200px)
+        padding-left: 60px
+      @media (max-width: 991px)
+        padding-left: 25px
+        width: 100%
+  .card_img_box
+    width: 100%
+    height: 693px
+    background-position: center
+    background-size: cover
+    @media (max-width: 1200px)
+      height: 600px
+    @media (max-width: 991px)
+      height: 550px
+    @media (max-width: 767px)
+      height: 500px
+    @media (max-width: 575px)
+      height: 400px
+    @media (max-width: 375px)
+      height: 300px
+
+
+  .card_page_info
+    color: #fff
+    h1, .h1, h2, .h2
+      color: $gold
+    .price
+      color: #F9F9FB
+      font: 40px/38px $f700
+      margin-bottom: 60px
+      @media (max-width: 1200px)
+        font: 35px/1.2 $f700
+        margin-bottom: 40px
+      @media (max-width: 991px)
+        font: 30px/1.2 $f700
+        margin-bottom: 30px
+      @media (max-width: 767px)
+        font: 26px/1.2 $f700
+
+    .read_more
+      max-width: 270px
+      margin-bottom: 80px
+      @media (max-width: 1200px)
+        margin-bottom: 50px
+      @media (max-width: 991px)
+        margin-bottom: 30px
+
+
+.card_img_box
+  +flex
+  display: inline-block
+
+.four_black_box
+  .col
+    width: 50%
+    margin-bottom: 20px
+    @media (max-width: 575px)
+      width: 100%
+  .item
+    background: $black
+    +box-shadow(4px 4px 10px rgba(4, 4, 4, 0.6))
+    padding: 25px
+    height: 178px
+    width: 100%
+    +flex
+    +col
+    +j-beetween
+    @media (max-width: 767px)
+      padding: 20px
+    &.has_border_right
+     &:before
+       border: 2px solid $gold
+       @media (min-width: 768px)
+         right: -8px
+         bottom: -8px
+    .fb_title
+      color: $gold
+      font: 30px/26px $f700
+      &.large
+        font: 80px/69px $f700
+        @media (max-width: 1200px)
+          font: 60px/1.2 $f700
+
+
+    .desc
+      color: #fff
+      font: 20px/19px $f700
+
+    &:hover
+      &:before
+        opacity: 1
+    &:before
+      opacity: 0
+      +transition($transition_default)
+@media (min-width: 1201px)
+  .text_right_xl
+    text-align: right
+
+
+.mb_70
+  margin-bottom: 70px
+  @media (max-width: 1200px)
+    margin-bottom: 50px
+  @media (max-width: 991px)
+    margin-bottom: 30px
+
+
+
+.card_page_slider
+  .slider_item
+    height: 610px
+    background-size: cover
+    background-position: center
+    position: relative
+    @media (max-width: 1200px)
+      height: 550px
+    @media (max-width: 991px)
+      height: 500px
+    @media (max-width: 767px)
+      height: 400px
+    @media (max-width: 575px)
+      height: 300px
+
+  .slick-arrow
+    top: calc(50% - 100px)
+    @media (max-width: 1200px)
+      top: calc(50% - 80px)
+    @media (max-width: 767px)
+      top: calc(50% - 60px)
+    @media (max-width: 575px)
+      top: calc(50% - 40px)
+
+
+  .slider__dots
+    +flex
+    +ai-center
+    padding: 0 10px
+    overflow: auto
+    @media (max-width: 767px)
+      padding: 0 5px
+    &::-webkit-scrollbar
+      height: 6px
+      //width: 4px
+      background:  #F0F0F0
+    &::-webkit-scrollbar-thumb:horizontal
+      background:  #BDBDBD
+      +border-radius(10px)
+    li
+      padding: 20px 10px
+      @media (max-width: 767px)
+        padding: 10px 5px
+      &.slick-active
+        .slider_item_nav
+          border: 2px solid $gold
+      .slider_item_nav
+        width: 160px
+        height: 160px
+        background-position: center
+        background-size: cover
+        @media (max-width: 1200px)
+          width: 140px
+          height: 140px
+        @media (max-width: 767px)
+          width: 100px
+          height: 100px
+        @media (max-width: 575px)
+          width: 80px
+          height: 80px
+
+
+.card_page_slider_nav
+  .slick-list
+    overflow: auto
+
+
+  .item
+    text-align: center
+    padding: 20px 10px
+  .slider_item
+    width: 100%
+    height: 160px
+    background-size: cover
+    background-position: center
+    display: inline-block
 

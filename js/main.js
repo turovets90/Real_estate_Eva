@@ -123,6 +123,20 @@ $(document).ready(function(){
 
 
 
+    $('.card_page_slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: true,
+        dots: true,
+       //asNavFor: '.card_page_slider_nav',
+        dotsClass: 'slider__dots',
+        customPaging: function(slick, index) {
+            var image = $(slick.$slides[index]).find('.slider_item').attr('data-src');
+            return '<div class="slider_item_nav" style="background-image:url(' + image + ')" ></div> '
+        }
+    });
+
 
 
 });
