@@ -235,6 +235,20 @@ h1, .h1, h2, .h2,h3, .h3, h4, .h4,h5, .h5 .title
   color: $black
   font-family: $f700
 
+
+h1
+  font-size: 36px
+  margin-bottom: 40px
+  @media (max-width: 1200px)
+    font-size: 34px
+    line-height: 1.2
+    margin-bottom: 30px
+  @media (max-width: 991px)
+    font-size: 30px
+  @media (max-width: 575px)
+    line-height: 1
+    margin-bottom: 25px
+
 h2, .h2
   font-size: 50px
   line-height: 43px
@@ -245,9 +259,8 @@ h2, .h2
     margin-bottom: 30px
   @media (max-width: 991px)
     font-size: 30px
-
   @media (max-width: 575px)
-
+    line-height: 1
     margin-bottom: 25px
 
 header
@@ -514,7 +527,13 @@ section
   @media (max-width: 767px)
     padding: 50px 0
   &.pb_70
-    padding-bottom: 70px
+    padding-bottom: 70px !important
+    @media (max-width: 1200px)
+      padding-bottom: 40px
+    @media (max-width: 767px)
+      padding-bottom: 20px
+  &.pb_60
+    padding-bottom: 60px
     @media (max-width: 1200px)
       padding-bottom: 40px
     @media (max-width: 767px)
@@ -662,7 +681,10 @@ section
       top: -7px
       border: 2px solid $gold
 
-.slick-arrow
+.slick-arrow, .pagination a
+  +flex
+  +ai-center
+  +j-center
   width: 51px
   height: 51px
   background: $black
@@ -681,7 +703,7 @@ section
     width: 24px
     height: 16px
 
-.slick-prev
+.slick-prev, .page_prev
   left: 0
   &:hover, &:focus
     &:before
@@ -689,7 +711,7 @@ section
 
   &:before
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='16' viewBox='0 0 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.375 8C23.375 8.21549 23.2894 8.42215 23.137 8.57453C22.9847 8.7269 22.778 8.8125 22.5625 8.8125L3.39887 8.8125L8.51275 13.9248C8.66532 14.0773 8.75103 14.2842 8.75103 14.5C8.75103 14.7158 8.66532 14.9227 8.51275 15.0753C8.36018 15.2278 8.15326 15.3135 7.9375 15.3135C7.72174 15.3135 7.51482 15.2278 7.36225 15.0753L0.862249 8.57526C0.786582 8.49978 0.72655 8.41012 0.68559 8.31141C0.64463 8.2127 0.623546 8.10688 0.623546 8C0.623546 7.89313 0.644629 7.78731 0.68559 7.6886C0.72655 7.58989 0.786582 7.50023 0.862248 7.42475L7.36225 0.924756C7.51481 0.77219 7.72174 0.68648 7.9375 0.68648C8.15326 0.68648 8.36018 0.77219 8.51275 0.924756C8.66531 1.07732 8.75102 1.28425 8.75102 1.50001C8.75102 1.71577 8.66531 1.92269 8.51275 2.07526L3.39887 7.1875L22.5625 7.1875C22.778 7.1875 22.9847 7.27311 23.137 7.42548C23.2894 7.57785 23.375 7.78451 23.375 8Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
-.slick-next
+.slick-next, .page_next
   right: 0
   &:hover, &:focus
     &:before
@@ -752,6 +774,8 @@ section
   @media (max-width: 767px)
     padding: 20px
 
+
+
   &.has_border_right
     &:hover
       &:before
@@ -765,6 +789,13 @@ section
     +ai-end
     img
       margin-bottom: 20px
+  .col_beetween
+    height: 100%
+    +flex
+    +col
+    +j-beetween
+    img
+      margin-bottom: 0
   .g_title
     color: $black
     font: 30px/26px $f700
@@ -780,7 +811,9 @@ section
 .ai_center
   +ai-center
   +flex
-
+.ai_end
+  +ai-end
+  +flex
 .j_center
   +j-center
   +flex
@@ -1017,7 +1050,7 @@ section
 
 
 .pb_0
-  padding-bottom: 0
+  padding-bottom: 0 !important
 
 
 .gallery_row
@@ -1085,7 +1118,9 @@ section
   text-align: center
 
 
-
+.bg_grey
+  background: #F9F9FB
+  +flex
 .four_goldbox-text
   &.bg_grey
     background: #F9F9FB
@@ -1367,6 +1402,11 @@ footer
     color: #fff
     h1, .h1, h2, .h2
       color: $gold
+      &.large
+        @media (min-width: 1201px)
+          font: 50px/55px $f700
+          text-transform: uppercase
+
     .price
       color: #F9F9FB
       font: 40px/38px $f700
@@ -1379,7 +1419,8 @@ footer
         margin-bottom: 30px
       @media (max-width: 767px)
         font: 26px/1.2 $f700
-
+    .subtitle
+      text-transform: uppercase
     .read_more
       max-width: 270px
       margin-bottom: 80px
@@ -1391,8 +1432,14 @@ footer
 
 .card_img_box
   +flex
-  display: inline-block
-
+  +ai-center
+  +j-center
+  //display: inline-block
+  padding: 20px
+.pt_35
+  padding-top: 35px
+.pt_70
+  padding-top: 50px
 .four_black_box
   .col
     width: 50%
@@ -1410,6 +1457,12 @@ footer
     +j-beetween
     @media (max-width: 767px)
       padding: 20px
+    &.j_start
+      +j-start
+      .desc
+        margin-bottom: 15px
+      .fb_title
+        font: 36px/31px $f700
     &.has_border_right
      &:before
        border: 2px solid $gold
@@ -1421,8 +1474,15 @@ footer
       font: 30px/26px $f700
       &.large
         font: 80px/69px $f700
+        +flex
+        +ai-end
         @media (max-width: 1200px)
           font: 60px/1.2 $f700
+        span
+          font-size: 20px
+          line-height: 1.5
+          @media (max-width: 1200px)
+            font-size: 18px
 
 
     .desc
@@ -1661,3 +1721,163 @@ footer
 
 .mb_0
   margin-bottom: 0 !important
+
+
+img.show_all
+  filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.3))
+
+
+
+.pagination
+  +flex
+  +ai-center
+  +wrap
+  +j-beetween
+  padding-top: 20px
+  .nav
+    +flex
+    +ai-center
+    margin: 0 -4px
+    @media (max-width: 1200px)
+      margin-bottom: 20px
+    li
+      padding: 0 4px
+      &.active
+        a
+          background: $gold
+          color: $black
+      a
+        position: relative
+        text-decoration: none
+        font-size: 26px
+        font-family: $f700
+        +box-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))
+
+.page_title
+  margin-bottom: 70px
+  @media (max-width: 1200px)
+    margin-bottom: 50px
+  @media (max-width: 991px)
+    margin-bottom: 40px
+  @media (max-width: 767px)
+    margin-bottom: 30px
+
+
+.pt_0
+  padding-top: 0 !important
+
+
+
+.builder_list
+  .col
+    width: 25%
+    margin-bottom: 30px
+    @media (max-width: 1200px)
+      width: 33.33%
+    @media (max-width: 767px)
+      width: 50%
+    @media (max-width: 575px)
+      width: 100%
+
+.builder_list_item
+  background: #F9F9FB
+  +box-shadow(7px 7px 8px rgba(0, 0, 0, 0.2))
+  .imb_box
+    width: 100%
+    height: 175px
+    position: relative
+    background: #fff
+    border: 1px solid #F9F9FB
+    @media (max-width: 767px)
+      height: 150px
+    @media (max-width: 575px)
+      height: 130px
+    img
+      position: absolute
+      +m_a
+      max-width: 90%
+      max-height: 90%
+  .builder_list_item_info
+    text-align: center
+    padding: 30px
+    @media (max-width: 1200px)
+      padding: 20px
+    @media (max-width: 575px)
+      padding: 15px
+    .b_title
+      color: $black
+      font: 24px/21px $f700
+      margin-bottom: 8px
+      @media (max-width: 1200px)
+        font-size: 22px
+      @media (max-width: 767px)
+        font-size: 20px
+    .counter
+      color: $grey_dark
+      font: 18px $f700
+      margin-bottom: 20px
+
+
+.pt_0
+  .bg_bottom
+    height: calc(100% - 125px)
+
+
+.pb_30
+  padding-bottom: 30px
+
+
+
+
+.contacts_list
+  margin-bottom: 90px
+  > li
+    position: relative
+    color: #fff
+    font-size: 21px
+    font-family: $f500
+    margin-bottom: 30px
+    padding-left: 30px
+    &:before
+      +b_a
+      left: 0
+      top: 3px
+    &.phones
+      &:before
+        width: 20px
+        height: 21px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M16.0467 0.993531L18.7457 3.7143C19.1575 4.11592 19.2971 4.64826 19.2977 5.16671C19.229 7.45945 18.1028 9.62662 16.9464 11.406C14.8215 14.3267 12.1868 17.0066 9.00289 18.6886C7.66777 19.3337 5.96424 20.0906 4.47399 20.0183C3.9134 20.0118 3.3632 19.8608 3.00185 19.466L0.282468 16.7452C-0.198093 16.1802 -0.0319402 15.6339 0.527822 15.2723L4.67847 13.0835C5.17019 12.8531 5.69705 12.9852 6.04841 13.329L7.05029 14.3314C7.13505 14.3932 7.23154 14.4326 7.33655 14.4336C8.82444 14.0493 10.1958 12.8848 11.1396 11.8561C12.0834 10.8274 13.362 9.72168 13.6647 8.28638C13.7142 8.10897 13.7316 7.89166 13.6136 7.76473L12.4277 6.59866C12.123 6.19669 11.9741 5.61631 12.2232 5.18718L12.2232 5.16672L14.5541 1.21857C14.9174 0.638984 15.6195 0.57855 16.0467 0.993531Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
+    &.email
+      &:before
+        width: 20px
+        height: 15px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='15' viewBox='0 0 20 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cg clip-path='url(%23clip0)'%3e%3cpath d='M9.64823 7.47329L0.00878906 2.59233V1.44276C0.00878906 1.10354 0.128027 0.817716 0.366503 0.585289C0.604978 0.352862 0.887384 0.236649 1.21372 0.236649H18.0827C18.4091 0.236649 18.6915 0.352862 18.93 0.585289C19.1684 0.817716 19.2877 1.10354 19.2877 1.44276V2.59233L9.64823 7.47329ZM9.04576 8.6794H10.2507L19.2877 3.98689V13.5038C19.2877 13.8305 19.1684 14.1132 18.93 14.3519C18.6915 14.5906 18.4091 14.7099 18.0827 14.7099H1.21372C0.887384 14.7099 0.604978 14.5906 0.366503 14.3519C0.128027 14.1132 0.00878906 13.8305 0.00878906 13.5038V3.98689L9.04576 8.6794Z' fill='%23EDCA4A'/%3e%3c/g%3e%3cdefs%3e%3cclipPath id='clip0'%3e%3crect width='19.2977' height='14.4733' fill='white' transform='translate(0 0.236649)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e ")
+    &.location
+      &:before
+        width: 17px
+        height: 27px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='17' height='27' viewBox='0 0 17 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.28282 0.271133C3.78561 0.271133 0.141602 3.90049 0.141602 8.39607C0.141602 16.1693 8.28282 26.3068 8.28282 26.3068C8.28282 26.3068 16.424 16.1677 16.424 8.39607C16.424 3.90212 12.78 0.271133 8.28282 0.271133ZM8.28282 12.8917C7.11686 12.8917 5.99866 12.4285 5.1742 11.604C4.34974 10.7796 3.88656 9.66136 3.88656 8.49539C3.88656 7.32943 4.34974 6.21123 5.1742 5.38677C5.99866 4.56231 7.11686 4.09914 8.28282 4.09914C9.44878 4.09914 10.567 4.56231 11.3914 5.38677C12.2159 6.21123 12.6791 7.32943 12.6791 8.49539C12.6791 9.66136 12.2159 10.7796 11.3914 11.604C10.567 12.4285 9.44878 12.8917 8.28282 12.8917Z' fill='%23EDCA4A'/%3e%3c/svg%3e ")
+    ul
+      li
+        margin-bottom: 10px
+    a
+      color: #fff
+      font-size: 21px
+      font-family: $f500
+      text-decoration: none
+      &:hover
+        color: $gold
+.social_list
+  +flex
+  +ai-center
+  margin: 0 -10px
+  li
+    padding: 0 10px
+    a
+      +flex
+      +ai-center
+      +j-center
+      width: 57px
+      height: 57px
+      background: $gold
+      +box-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))
