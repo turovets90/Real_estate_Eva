@@ -402,6 +402,8 @@ header
           font-size: 16px
         @media (max-width: 1024px)
           font: 20px $f700
+        @media (max-width: 767px)
+          font: 18px $f700
 
 
         &:hover
@@ -526,8 +528,10 @@ section
     padding: 70px 0
   @media (max-width: 767px)
     padding: 50px 0
+  @media (max-width: 575px)
+    padding: 30px 0
   &.pb_70
-    padding-bottom: 70px !important
+    padding-bottom: 70px
     @media (max-width: 1200px)
       padding-bottom: 40px
     @media (max-width: 767px)
@@ -549,6 +553,8 @@ section
   @media (max-width: 767px)
     padding-right: 50px
     padding-left: 45px
+  @media (max-width: 575px)
+    padding: 50px 40px 50px 35px
   &:before
     +b_a
     width: 100%
@@ -579,6 +585,8 @@ section
   @media (max-width: 767px)
     font-size: 16px
     padding: 30px
+  @media (max-width: 575px)
+    padding: 20px
 
   +box-shadow(10px 10px 20px rgba(0, 0, 0, 0.6))
   .title
@@ -614,6 +622,7 @@ section
   font-family: $f700
   @media (max-width: 767px)
     height: 45px
+    font-size: 16px
   &:before
     +b_a
     width: 100%
@@ -1120,7 +1129,7 @@ section
 
 .bg_grey
   background: #F9F9FB
-  +flex
+  //+flex
 .four_goldbox-text
   &.bg_grey
     background: #F9F9FB
@@ -1157,20 +1166,23 @@ section
         color: rgba(35, 35, 35, 0.4)
         font-size: 15px
 
+    textarea
+      height: 166px
+
   .btn_submit
     max-width: 200px
 
 
 
 footer
-  background: url(../img/footer_bg.png)
+  background: url(../img/footer_bg.png) center
   position: relative
-  background-position: center
+  //background-position: center
   background-size: cover
   color: #fff
-  padding: 70px 0
+  padding: 70px 0 30px
   @media (max-width: 1200px)
-    padding: 50px 0
+    padding: 50px 0 30px
   @media (max-width: 991px)
     padding: 30px 0
   &:before
@@ -1208,6 +1220,7 @@ footer
       a
         display: block
         color: #fff
+        text-decoration: underline
   .f_title
     color: $gold
     font: 22px/26px $f600
@@ -1357,6 +1370,8 @@ footer
       font-size: 16px
       +flex
       text-decoration: none
+      @media (max-width: 767px)
+        font-size: 14px
       &:hover
         text-decoration: underline
         color: $gold
@@ -1824,13 +1839,20 @@ img.show_all
 
 
 .pb_30
-  padding-bottom: 30px
+  @media (min-width: 1201px)
+    padding-bottom: 30px
 
 
 
 
 .contacts_list
   margin-bottom: 90px
+  @media (max-width: 1200px)
+    margin-bottom: 70px
+  @media (max-width: 991px)
+    margin-bottom: 50px
+  @media (max-width: 767px)
+    margin-bottom: 30px
   > li
     position: relative
     color: #fff
@@ -1838,6 +1860,8 @@ img.show_all
     font-family: $f500
     margin-bottom: 30px
     padding-left: 30px
+    @media (max-width: 1200px)
+      font-size: 18px
     &:before
       +b_a
       left: 0
@@ -1865,6 +1889,8 @@ img.show_all
       font-size: 21px
       font-family: $f500
       text-decoration: none
+      @media (max-width: 1200px)
+        font-size: 18px
       &:hover
         color: $gold
 .social_list
@@ -1881,3 +1907,51 @@ img.show_all
       height: 57px
       background: $gold
       +box-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))
+
+
+
+.map_img_box
+  &.has_gold_shadow
+    padding-top: 12px
+    padding-left: 12px
+    position: relative
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2))
+
+    @media (max-width: 1200px)
+      padding-top: 0
+      padding-left: 0
+
+    &:before
+      +b_a
+      width: 500px
+      height: 500px
+      background: $gold
+      top: 0
+      left: 0
+      @media (max-width: 1200px)
+        display: none
+
+  iframe
+    position: relative
+    height: 657px
+    width: 800px
+    @media (max-width: 1415px)
+      width: 100%
+    @media (max-width: 1200px)
+      height: 500px
+    @media (max-width: 991px)
+      height: 450px
+    @media (max-width: 767px)
+      height: 350px
+    @media (max-width: 575px)
+      //height: 300px
+
+.img_back
+  position: absolute
+  bottom: 5%
+  &.left
+    left: 16%
+  &.right
+    right: 16%
+  @media (max-width: 1200px)
+    display: none
