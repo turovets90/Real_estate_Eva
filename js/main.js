@@ -138,6 +138,20 @@ $(document).ready(function(){
     });
 
 
+    $('.tabs li ').each(function(){
+        var tab_link=$(this).index();
+        var tab_content=$('.tab-content_product .tab-pane').index();
+        console.log(tab_link);
+        $(this).click(function(){
+            console.log(tab_link);
+            $('.tabs li ').removeClass('act');
+            $('.tab_content .tab_pane').removeClass('active');
+            $(this).addClass('act');
+            $('.tab_content .tab_pane').eq(tab_link).addClass('active');
+        });
+    });
+
+
 
 });
 

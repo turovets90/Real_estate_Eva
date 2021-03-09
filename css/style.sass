@@ -1526,3 +1526,138 @@ footer
     background-position: center
     display: inline-block
 
+
+.layouts
+  .layouts_left
+    width: 40%
+    padding-right: 20px
+    @media (max-width: 767px)
+      width: 100%
+      padding-right: 0
+      margin-bottom: 20px
+  .layouts_right
+    width: 60%
+    max-width: 670px
+    @media (max-width: 767px)
+      width: 100%
+.title_tabs
+  +flex
+  +ai-center
+  +j-beetween
+  +wrap
+  margin-bottom: 75px
+  @media (max-width: 1200px)
+    margin-bottom: 50px
+  @media (max-width: 767px)
+    margin-bottom: 30px
+
+  h2, .h2
+    margin-bottom: 0
+
+
+  .tabs
+    +flex
+    +ai-center
+    +j-end
+    width: 100%
+    li
+      padding: 0 10px
+      flex-grow: 1
+      &:first-child
+        padding-left: 0
+      &:last-child
+        padding-right: 0
+      @media (max-width: 1200px)
+        padding: 0 5px
+      &.act
+        span
+          background: $gold
+      span
+        display: inline-block
+        color: $black
+        font: 20px/17px $f700
+        background: #F9F9FB
+        padding: 18px 32px
+        cursor: pointer
+        width: 100%
+        text-align: center
+        @media (max-width: 1200px)
+          padding: 10px 15px
+          font: 18px/1.2 $f700
+        @media (max-width: 767px)
+          font-size: 16px
+          padding: 5px 10px
+        @media (max-width: 375px)
+          font-size: 14px
+
+.tab_content
+  .tab_pane
+    display: none
+    &.active
+      display: block
+    .d_flex
+      +wrap
+      +j-beetween
+
+      .desc
+        font: 16px/22px $nunito
+      .options
+        margin-bottom: 65px
+        @media (max-width: 1200px)
+          margin-bottom: 40px
+        @media (max-width: 767px)
+          margin-bottom: 30px
+
+
+.options
+  li
+    +flex
+    +ai-center
+    color: $black
+    font: 26px/1.2 $f700
+    margin-bottom: 20px
+    @media (max-width: 1200px)
+      font: 24px/1.2 $f700
+    @media (max-width: 991px)
+      font: 22px/1.2 $f700
+    @media (max-width: 767px)
+      font: 20px/1.2 $f700
+    picture
+      +flex
+      min-width: 40px
+      margin-right: 20px
+      @media (max-width: 575px)
+        margin-right: 10px
+
+.preim_row
+  @media (max-width: 1200px)
+    margin-bottom: 30px
+  @media (max-width: 991px)
+    margin-bottom: 0
+  .col_img
+    width: 58%
+    @media (max-width: 991px)
+      width: 100%
+      margin-bottom: 30px
+  .col_text
+    width: 42%
+    @media (max-width: 991px)
+      width: 100%
+
+@media (min-width: 1201px)
+  .preim_row2
+    margin-top: -65px
+    .col_img
+      padding-top: 130px
+.img_box
+  .has_border_left
+    &:before
+      left: -10px
+      top: -10px
+
+
+
+
+
+.mb_0
+  margin-bottom: 0 !important
