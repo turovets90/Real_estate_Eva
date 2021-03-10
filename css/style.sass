@@ -206,9 +206,7 @@ body
   padding-left: 10px
   padding-right: 10px
   position: relative
-  @media (max-width: 767px)
-    padding-left: 15px
-    padding-right: 15px
+
 
 
 .row
@@ -218,17 +216,13 @@ body
   flex-wrap: wrap
   margin-right: -10px
   margin-left: -10px
-  @media (max-width: 767px)
-    margin-right: -15px
-    margin-left: -15px
+
 
 
 .col
   padding-left: 10px
   padding-right: 10px
-  @media (max-width: 767px)
-    padding-left: 15px
-    padding-right: 15px
+
 
 
 h1, .h1, h2, .h2,h3, .h3, h4, .h4,h5, .h5 .title
@@ -431,10 +425,14 @@ header
         li
           width: 100%
           //margin-bottom: 10px
+          +transition($transition_default)
           @media (min-width: 1025px)
             width: 33.33%
             + li
               border-left: 1px solid #232323
+
+          &:hover, &:focus
+            background: #f9f9fb
 
           a
             +flex
@@ -620,9 +618,13 @@ section
   height: 53px
   position: relative
   font-family: $f700
+  +transition($transition_default)
   @media (max-width: 767px)
     height: 45px
     font-size: 16px
+  &:hover, &:focus
+    background: #f9f9fb
+
   &:before
     +b_a
     width: 100%
@@ -768,7 +770,7 @@ section
     width: 50%
     display: inline-block
     @media (max-width: 575px)
-      width: 100%
+      //width: 100%
 
 
 .gold_box_item
@@ -782,6 +784,11 @@ section
     padding: 25px
   @media (max-width: 767px)
     padding: 20px
+    height: 250px
+  @media (max-width: 575px)
+    padding: 10px
+    height: 200px
+
 
 
 
@@ -812,10 +819,18 @@ section
     text-transform: initial
     @media (max-width: 1200px)
       font: 26px/1.2 $f700
+    @media (max-width: 767px)
+      font-size: 24px
+      line-height: 1
+    @media (max-width: 575px)
+      font-size: 20px
+
   .g_desc
     font: 20px/21px $f700
     @media (max-width: 1200px)
       font: 16px/1.2 $f700
+    @media (max-width: 575px)
+      font-size: 14px
 
 .ai_center
   +ai-center
@@ -1109,6 +1124,21 @@ section
 
 
 .partners_list
+  .partner_list_item
+    img
+      +transition($transition_default)
+      -webkit-filter: grayscale(100%)
+      -moz-filter: grayscale(100%)
+      -ms-filter: grayscale(100%)
+      -o-filter: grayscale(100%)
+      filter: grayscale(100%)
+      &:hover
+        -webkit-filter: grayscale(0)
+        -moz-filter: grayscale(0)
+        -ms-filter: grayscale(0)
+        -o-filter: grayscale(0)
+        filter: grayscale(0)
+
   &.slick-slider
     padding: 0 80px
     @media (max-width: 1200px)
@@ -1460,7 +1490,7 @@ footer
     width: 50%
     margin-bottom: 20px
     @media (max-width: 575px)
-      width: 100%
+      //width: 100%
   .item
     background: $black
     +box-shadow(4px 4px 10px rgba(4, 4, 4, 0.6))
@@ -1472,6 +1502,9 @@ footer
     +j-beetween
     @media (max-width: 767px)
       padding: 20px
+      height: 170px
+    @media (max-width: 575px)
+      padding: 15px
     &.j_start
       +j-start
       .desc
@@ -1479,7 +1512,8 @@ footer
       .fb_title
         font: 36px/31px $f700
     &.has_border_right
-     &:before
+      flex-wrap: nowrap
+      &:before
        border: 2px solid $gold
        @media (min-width: 768px)
          right: -8px
@@ -1487,29 +1521,41 @@ footer
     .fb_title
       color: $gold
       font: 30px/26px $f700
+      @media (max-width: 575px)
+        font: 26px/1 $f700
       &.large
         font: 80px/69px $f700
         +flex
         +ai-end
         @media (max-width: 1200px)
           font: 60px/1.2 $f700
+        @media (max-width: 575px)
+          font: 40px/1.2 $f700
         span
           font-size: 20px
           line-height: 1.5
           @media (max-width: 1200px)
             font-size: 18px
+          @media (max-width: 575px)
+            font-size: 16px
 
 
     .desc
       color: #fff
       font: 20px/19px $f700
+      @media (max-width: 1200px)
+        font-size: 18px
+      @media (max-width: 575px)
+        font-size: 16px
+
 
     &:hover
       &:before
         opacity: 1
     &:before
-      opacity: 0
-      +transition($transition_default)
+      @media (min-width: 768px)
+        opacity: 0
+        +transition($transition_default)
 @media (min-width: 1201px)
   .text_right_xl
     text-align: right
@@ -1907,6 +1953,9 @@ img.show_all
       height: 57px
       background: $gold
       +box-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))
+      +transition($transition_default)
+      &:hover, &:focus
+        background: $grey_dark
 
 
 
@@ -1955,3 +2004,24 @@ img.show_all
     right: 16%
   @media (max-width: 1200px)
     display: none
+
+
+
+@media (max-width: 575px)
+  .m_order_1
+    order: 1
+    margin-bottom: 20px
+  .m_order_2
+    order: 2
+
+
+.m_show
+  @media (min-width: 576px)
+    display: none
+.m_hide
+  @media (max-width: 575px)
+    display: none
+
+
+.w_100
+  width: 100% !important
