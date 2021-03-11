@@ -100,53 +100,61 @@
 
 $transition_default: .3s linear
 
-@font-face
+//@font-face
   font-family: 'Cormorant Garamond Bold'
   src: url('../fonts/CormorantGaramond-Bold.eot')
   src: local('Cormorant Garamond Bold'), local('CormorantGaramond-Bold'), url('../fonts/CormorantGaramond-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/CormorantGaramond-Bold.woff') format('woff'), url('../fonts/CormorantGaramond-Bold.ttf') format('truetype')
   font-weight: bold
   font-style: normal
 
-$f700: 'Cormorant Garamond Bold'
+//$f700: 'Cormorant Garamond Bold'
+$f700: 700
 
 
-@font-face
+//@font-face
   font-family: 'Cormorant Garamond SemiBold'
   src: url('../fonts/CormorantGaramond-SemiBold.eot')
   src: local('Cormorant Garamond SemiBold'), local('CormorantGaramond-SemiBold'), url('../fonts/CormorantGaramond-SemiBold.eot?#iefix') format('embedded-opentype'), url('../fonts/CormorantGaramond-SemiBold.woff') format('woff'), url('../fonts/CormorantGaramond-SemiBold.ttf') format('truetype')
   font-weight: 600
   font-style: normal
-$f600: 'Cormorant Garamond SemiBold'
+//$f600: 'Cormorant Garamond SemiBold'
+$f600: 600
 
-@font-face
+//@font-face
   font-family: 'Cormorant Garamond Medium'
   src: url('../fonts/CormorantGaramond-Medium.eot')
   src: local('Cormorant Garamond Medium'), local('CormorantGaramond-Medium'), url('../fonts/CormorantGaramond-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/CormorantGaramond-Medium.woff') format('woff'), url('../fonts/CormorantGaramond-Medium.ttf') format('truetype')
   font-weight: 500
   font-style: normal
-$f500: 'Cormorant Garamond Medium'
+//$f500: 'Cormorant Garamond Medium'
+$f500: 500
 
-@font-face
+//@font-face
   font-family: 'Cormorant Garamond Light'
   src: url('../fonts/CormorantGaramond-Light.eot')
   src: local('Cormorant Garamond Light'), local('CormorantGaramond-Light'), url('../fonts/CormorantGaramond-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/CormorantGaramond-Light.woff') format('woff'), url('../fonts/CormorantGaramond-Light.ttf') format('truetype')
   font-weight: 300
   font-style: normal
-$f400: 'Cormorant Garamond Light'
+//$f400: 'Cormorant Garamond Light'
+$f400: 400
 
-@font-face
+//@font-face
   font-family: 'Cormorant Garamond Regular'
   src: url('../fonts/CormorantGaramond-Regular.eot')
   src: local('Cormorant Garamond Regular'), local('CormorantGaramond-Regular'), url('../fonts/CormorantGaramond-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/CormorantGaramond-Regular.woff') format('woff'), url('../fonts/CormorantGaramond-Regular.ttf') format('truetype')
   font-weight: normal
   font-style: normal
 
-$f400: 'Cormorant Garamond Regular'
+//$f400: 'Cormorant Garamond Regular'
+$f300: 300
 
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap')
 
-$font: 'Cormorant Garamond', serif
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap')
+
+//$font: 'Cormorant Garamond', serif
+$font: 'Roboto', sans-serif
 $nunito: 'Nunito', sans-serif
 
 $gold: #EDCA4A
@@ -195,9 +203,12 @@ body
   color: $black
   font-size: 16px
   line-height: 22px
-  font-family: $f400
+  font-family: $font
   padding: 0
   margin: 0
+  @media (max-width: 767px)
+    font-size: 14px
+    line-height: 1.2
 
 .container
   width: 100%
@@ -227,7 +238,7 @@ body
 
 h1, .h1, h2, .h2,h3, .h3, h4, .h4,h5, .h5 .title
   color: $black
-  font-family: $f700
+  font-weight: $f700
 
 
 h1
@@ -244,11 +255,11 @@ h1
     margin-bottom: 25px
 
 h2, .h2
-  font-size: 50px
+  font-size: 35px
   line-height: 43px
   margin-bottom: 40px
   @media (max-width: 1200px)
-    font-size: 40px
+    //font-size: 35px
     line-height: 1.2
     margin-bottom: 30px
   @media (max-width: 991px)
@@ -389,15 +400,15 @@ header
         display: inline-block
         position: relative
         color: $black
-        font: 17px $f500
+        font: $f500 14px $font
         text-decoration: none
         letter-spacing: 0.02em
         @media (max-width: 1200px)
           font-size: 16px
         @media (max-width: 1024px)
-          font: 20px $f700
+          font: $f700 20px $font
         @media (max-width: 767px)
-          font: 18px $f700
+          font: $f700 18px $font
 
 
         &:hover
@@ -439,7 +450,7 @@ header
             +ai-center
             color: $black
             font-size: 20px
-            font-family: $f700
+            font-weight: $f700
             line-height: 17px
             padding: 23px 30px
             @media (max-width: 1200px)
@@ -453,7 +464,7 @@ header
             span
               color: $black
               font-size: 20px
-              font-family: $f700
+              font-weight: $f700
               line-height: 17px
 
 
@@ -511,11 +522,11 @@ header
   a
     text-decoration: none
     color: $black
-    font: 20px $f500
+    font: $f500 20px $font
     letter-spacing: 0.05em
     padding-bottom: 5px
     @media (max-width: 575px)
-      font: 15px $f700
+      font: $f700 15px $font
 
 
 
@@ -573,15 +584,15 @@ section
   background: $black
   max-width: 400px
   color: #fff
-  font: 20px/25px $f700
+  font: $f700 16px/25px $font
   padding: 50px 70px
 
   @media (max-width: 1200px)
-    font-size: 18px
+    //font-size: 18px
     line-height: 1.2
     padding: 30px 40px
   @media (max-width: 767px)
-    font-size: 16px
+    font-size: 14px
     padding: 30px
   @media (max-width: 575px)
     padding: 20px
@@ -589,9 +600,9 @@ section
   +box-shadow(10px 10px 20px rgba(0, 0, 0, 0.6))
   .title
     color: $gold
-    font: 50px/43px $f700
+    font: $f700 40px/43px $font
     @media (max-width: 1200px)
-      font-size: 40px
+      font-size: 34px
       line-height: 1.2
     @media (max-width: 991px)
       font-size: 30px
@@ -610,14 +621,14 @@ section
   +j-center
   text-decoration: none
   color: $gold
-  font-size: 20px
+  font-size: 16px
   background: $black
   border: 2px solid $gold
   width: 100%
   max-width: 175px
   height: 53px
   position: relative
-  font-family: $f700
+  font-weight: $f700
   +transition($transition_default)
   @media (max-width: 767px)
     height: 45px
@@ -814,23 +825,23 @@ section
       margin-bottom: 0
   .g_title
     color: $black
-    font: 30px/26px $f700
+    font: $f700 24px/26px $font
     margin-bottom: 10px
     text-transform: initial
     @media (max-width: 1200px)
-      font: 26px/1.2 $f700
+      font: $f700 22px/1.2 $font
     @media (max-width: 767px)
-      font-size: 24px
+      font-size: 20px
       line-height: 1
     @media (max-width: 575px)
-      font-size: 20px
+      font-size: 18px
 
   .g_desc
-    font: 20px/21px $f700
+    font: $f700 16px/21px $font
     @media (max-width: 1200px)
-      font: 16px/1.2 $f700
+      font: $f700 14px/1.2 $font
     @media (max-width: 575px)
-      font-size: 14px
+      font-size: 12px
 
 .ai_center
   +ai-center
@@ -848,7 +859,7 @@ section
 .g_title
   letter-spacing: 0.04em
   text-transform: uppercase
-  font: 16px/14px $f700
+  font: $f700 16px/14px $font
   color: $gold
   margin-bottom: 35px
   @media (max-width: 1200px)
@@ -875,14 +886,14 @@ section
     @media (max-width: 575px)
       margin-bottom: 25px
   .desc
-    font: 24px/29px $f400
-    @media (max-width: 1200px)
-      font-size: 22px
+    font: $f400 16px/29px  $font
+    //@media (max-width: 1200px)
+      font-size: 20px
       line-height: 1.2
     @media (max-width: 991px)
-      font-size: 20px
+      font-size: 16px
     @media (max-width: 767px)
-      font-size: 18px
+      font-size: 14px
 
 
 
@@ -915,7 +926,7 @@ section
       color: $black
       letter-spacing: 0.02em
       text-transform: uppercase
-      font: 13px $f700
+      font: $f700 13px $font
       background: $gold
       padding: 8px 17px
   .card_item_body
@@ -925,33 +936,33 @@ section
     @media (max-width: 575px)
       padding: 15px
     .card_item_title
-      font: 32px/28px $f700
+      font: $f700 26px/28px $font
       margin-bottom: 10px
       @media (max-width: 1200px)
-        font-size: 26px
+        //font-size: 26px
       @media (max-width: 767px)
         font-size: 24px
       @media (max-width: 575px)
         font-size: 22px
     .card_item_subtitle
       color: $grey_dark
-      font: 20px/21px $f700
+      font: $f700 16px/21px $font
       margin-bottom: 15px
       @media (max-width: 1200px)
-        font-size: 18px
+        //font-size: 14px
       @media (max-width: 767px)
-        font-size: 16px
+        font-size: 14px
 
     .b_row
       +flex
       +ai-center
       +j-beetween
       .price
-        font: 22px $f700
+        font: $f700 18px $font
         @media (max-width: 1200px)
-          font-size: 20px
+          //font-size: 20px
         @media (max-width: 767px)
-          font-size: 18px
+          font-size: 16px
 
 
 .btn_default
@@ -965,8 +976,8 @@ section
   +box-shadow(2px 2px 6px rgba(237, 202, 74, 0.6))
   color: $black
   text-decoration: none
-  font-size: 18px
-  font-family: $f700
+  font-size: 14px
+  font-weight: $f700
   &:hover
     text-decoration: none
     background: #fff
@@ -1062,13 +1073,13 @@ section
     @media (max-width: 767px)
       padding: 20px
     .card_item_title
-      font: 32px/32px $f700
+      font: $f700 26px/32px $font
       margin-bottom: 15px
       @media (max-width: 1200px)
-        font-size: 28px
+        font-size: 24px
     .card_item_desc
       color: $grey_dark
-      font: 15px/19px $nunito
+      font: 13px/19px $nunito
       margin-bottom: 20px
       max-width: 590px
 
@@ -1104,16 +1115,16 @@ section
         width: 100%
       .title
         color: #F9F9FB
-        font-size: 32px
+        font-size: 26px
         line-height: 31px
-        font-family: $f700
+        font-weight: $f700
         margin-bottom: 20px
         @media (max-width: 1200px)
-          font-size: 30px
-        @media (max-width: 991px)
-          font-size: 28px
-        @media (max-width: 767px)
           font-size: 24px
+        @media (max-width: 991px)
+          font-size: 22px
+        @media (max-width: 767px)
+          font-size: 18px
       .read_more
         max-width: 100%
     .has_border_right
@@ -1253,7 +1264,7 @@ footer
         text-decoration: underline
   .f_title
     color: $gold
-    font: 22px/26px $f600
+    font: $f600 20px/26px $font
     text-transform: uppercase
     margin-bottom: 20px
   a
@@ -1266,7 +1277,7 @@ footer
     li
       margin-bottom: 5px
       a
-        font: 18px $f500
+        font:  $f500 16px $font
         color: #fff
         text-decoration: none
         &:hover
@@ -1279,7 +1290,7 @@ footer
       position: relative
       padding-left: 27px
       color: #fff
-      font: 18px $f500
+      font: $f500 16px $font
       margin-bottom: 20px
       .social_menu
         +flex
@@ -1297,7 +1308,7 @@ footer
             +j-center
       a
         color: #fff
-        font: 18px $f500
+        font: $f500 16px $font
         text-decoration: none
         &:hover
           color: $gold
@@ -1449,21 +1460,21 @@ footer
       color: $gold
       &.large
         @media (min-width: 1201px)
-          font: 50px/55px $f700
+          font: $f700 35px/55px $font
           text-transform: uppercase
 
     .price
       color: #F9F9FB
-      font: 40px/38px $f700
+      font: $f700 30px/38px $font
       margin-bottom: 60px
       @media (max-width: 1200px)
-        font: 35px/1.2 $f700
+        font: $f700 35px/1.2 $font
         margin-bottom: 40px
       @media (max-width: 991px)
-        font: 30px/1.2 $f700
+        font: $f700 30px/1.2 $font
         margin-bottom: 30px
       @media (max-width: 767px)
-        font: 26px/1.2 $f700
+        font: $f700 26px/1.2 $font
     .subtitle
       text-transform: uppercase
     .read_more
@@ -1510,7 +1521,7 @@ footer
       .desc
         margin-bottom: 15px
       .fb_title
-        font: 36px/31px $f700
+        font: $f700 36px/31px $font
     &.has_border_right
       flex-wrap: nowrap
       &:before
@@ -1520,17 +1531,17 @@ footer
          bottom: -8px
     .fb_title
       color: $gold
-      font: 30px/26px $f700
+      font: $f700 30px/26px $font
       @media (max-width: 575px)
-        font: 26px/1 $f700
+        font: $f700 26px/1 $font
       &.large
-        font: 80px/69px $f700
+        font: $f700 80px/69px $font
         +flex
         +ai-end
         @media (max-width: 1200px)
-          font: 60px/1.2 $f700
+          font: $f700 60px/1.2 $font
         @media (max-width: 575px)
-          font: 40px/1.2 $f700
+          font: $f700 40px/1.2 $font
         span
           font-size: 20px
           line-height: 1.5
@@ -1542,7 +1553,7 @@ footer
 
     .desc
       color: #fff
-      font: 20px/19px $f700
+      font: $f700 20px/19px $font
       @media (max-width: 1200px)
         font-size: 18px
       @media (max-width: 575px)
@@ -1696,7 +1707,7 @@ footer
       span
         display: inline-block
         color: $black
-        font: 20px/17px $f700
+        font: $f700 20px/17px $font
         background: #F9F9FB
         padding: 18px 32px
         cursor: pointer
@@ -1704,7 +1715,7 @@ footer
         text-align: center
         @media (max-width: 1200px)
           padding: 10px 15px
-          font: 18px/1.2 $f700
+          font: $f700 18px/1.2 $font
         @media (max-width: 767px)
           font-size: 16px
           padding: 5px 10px
@@ -1735,14 +1746,14 @@ footer
     +flex
     +ai-center
     color: $black
-    font: 26px/1.2 $f700
+    font: $f700 26px/1.2 $font
     margin-bottom: 20px
     @media (max-width: 1200px)
-      font: 24px/1.2 $f700
+      font: $f700 24px/1.2 $font
     @media (max-width: 991px)
-      font: 22px/1.2 $f700
+      font: $f700 22px/1.2 $font
     @media (max-width: 767px)
-      font: 20px/1.2 $f700
+      font: $f700 20px/1.2 $font
     picture
       +flex
       min-width: 40px
@@ -1811,7 +1822,7 @@ img.show_all
         position: relative
         text-decoration: none
         font-size: 26px
-        font-family: $f700
+        font-weight: $f700
         +box-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))
 
 .page_title
@@ -1867,7 +1878,7 @@ img.show_all
       padding: 15px
     .b_title
       color: $black
-      font: 24px/21px $f700
+      font: $f700 24px/21px $font
       margin-bottom: 8px
       @media (max-width: 1200px)
         font-size: 22px
@@ -1875,7 +1886,7 @@ img.show_all
         font-size: 20px
     .counter
       color: $grey_dark
-      font: 18px $f700
+      font: $f700 18px $font
       margin-bottom: 20px
 
 
@@ -1903,7 +1914,7 @@ img.show_all
     position: relative
     color: #fff
     font-size: 21px
-    font-family: $f500
+    font-weight: $f500
     margin-bottom: 30px
     padding-left: 30px
     @media (max-width: 1200px)
@@ -1933,7 +1944,7 @@ img.show_all
     a
       color: #fff
       font-size: 21px
-      font-family: $f500
+      font-weight: $f500
       text-decoration: none
       @media (max-width: 1200px)
         font-size: 18px
